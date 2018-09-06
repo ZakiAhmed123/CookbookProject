@@ -1,5 +1,12 @@
 <div class="container">
-<app-header></app-header>
-<app-recipes></app-recipes>
-<app-shopping-list></app-shopping-list>
+<app-header (recipeClicked)="onNavigate($event)"></app-header>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-recipes *ngIf="recipeStatus2"></app-recipes>
+            <app-shopping-list *ngIf="shoppingList2"></app-shopping-list>
+        </div>
+    </div>
+</div>
+
